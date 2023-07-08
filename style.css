@@ -29,4 +29,14 @@ footer {
 .sidebar {
     width: 200px;
     height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    width: 5rem;
+    height: 2rem;
+    border-radius: 1rem;
 }
