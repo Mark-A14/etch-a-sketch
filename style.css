@@ -1,0 +1,32 @@
+* {
+    border-style: solid;
+    border-color: black;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    
+}
+
+main {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+footer {
+
+}
+
+.container {
+    width: 500px;
+    height: 500px;
+}
+
+.sidebar {
+    width: 200px;
+    height: 500px;
+}
