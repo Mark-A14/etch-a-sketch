@@ -11,13 +11,24 @@ function spawnBoxes(){
     if(container.hasChildNodes()){
         return;
     }
-    let squareSize = 500/slider.value - 6;
+    let squareSize = 500/slider.value - 2;
     for(let i = 0; i < slider.value**2; i++){
         let squareDiv = document.createElement('div');
         container.append(squareDiv);
+        squareDiv.classList.add('square');
         squareDiv.style.width = squareSize.toString() + 'px';
         squareDiv.style.height = squareSize.toString() + 'px';
     }
 }
 
 btnSpawn.addEventListener('click', spawnBoxes);
+container.addEventListener('mousemove', mouseEvent);
+
+function mouseEvent(e){
+    let boxes = document.querySelectorAll('.square');
+    boxes.forEach(n => {
+        n.addEventListener('mouseenter', function () {
+            this.classList.add('hovered');
+        })
+    });
+}
