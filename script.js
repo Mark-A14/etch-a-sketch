@@ -1,27 +1,23 @@
-const container = document.querySelector('.container');
-const buttonSpawn = document.querySelector('.spawn');
-
-let clientWidth = container.clientWidth;
-let clientHeight = container.clientHeight;
-console.log(clientHeight);
-console.log(clientWidth);
+let container = document.querySelector('.container');
+let btnSpawn = document.querySelector('.spawn');
+let slider = document.querySelector('#boxes');
+let sliderOutput = document.querySelector('.rangeOutput');
+sliderOutput.innerText = slider.value;
+slider.oninput = function () {
+    sliderOutput.innerText = this.value.toString() + 'x' + this.value.toString();
+}
 
 function spawnBoxes(){
-    let squareLot;
-    let numOfBox = 16**2;
-    for(let i = 0; i < numOfBox; i++){
-        squareLot = document.createElement('div');
-        container.append(squareLot);
-        squareLot.setAttribute('class','square');
-        squareLot.style.width = calculateSquareSize();
-        squareLot.style.height = calculateSquareSize();    
+    if(container.hasChildNodes()){
+        return;
     }
-
+    let squareSize = 500/slider.value - 6;
+    for(let i = 0; i < slider.value**2; i++){
+        let squareDiv = document.createElement('div');
+        container.append(squareDiv);
+        squareDiv.style.width = squareSize.toString() + 'px';
+        squareDiv.style.height = squareSize.toString() + 'px';
+    }
 }
 
-function calculateSquareSize() {
-    let size = clientWidth/16;
-    return size.toString() + "px";
-}
-
-buttonSpawn.addEventListener("click", spawnBoxes);
+btnSpawn.addEventListener('click', spawnBoxes);
