@@ -12,7 +12,11 @@
     </header>
     <main>
         <div class="sidebar">
-            <button class="spawn" type="button" onclick="spawnBoxes()">Draw</button>
+            <div class="slider">
+                <div class="rangeOutput"></div>
+                <input type="range" min="4" value="16" max="100" id="boxes">
+            </div>
+            <button class="spawn" type="button">Draw</button>
         </div>
         <div class="container"></div>
     </main>
