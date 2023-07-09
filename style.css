@@ -24,6 +24,9 @@ footer {
 .container {
     width: 500px;
     height: 500px;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 .sidebar {
@@ -36,7 +39,16 @@ footer {
 }
 
 button {
+    text-decoration: none;
     width: 5rem;
     height: 2rem;
     border-radius: 1rem;
+}
+
+.square {
+    border-color: bisque;
+    border-width: 0;
+    padding: 0;
+    margin: 0;
+    background-color: bisque;
 }
