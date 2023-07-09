@@ -47,8 +47,22 @@ button {
 
 .square {
     border-color: bisque;
-    border-width: 0;
+    border-width: 1px;
+    border-color: brown;
     padding: 0;
     margin: 0;
     background-color: bisque;
+}
+
+.hovered {
+    background-color: black;
+}
+
+.slider {
+    border-color: white;
+}
+.rangeOutput {
+    height: 30px;
+    width: 80%;
+    font-size: large;
 }
