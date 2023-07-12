@@ -1,54 +1,114 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:wght@900&family=Raleway&display=swap");
+
 * {
-    border-style: solid;
-    border-color: black;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    
-    
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 main {
-    display: flex;
-    flex-wrap: nowrap;
+	display: flex;
+	flex-wrap: nowrap;
+	box-shadow: 0 5px 20px rgb(0 0 0 / 0.2);
+	border-radius: 10px;
+}
+
+header h1,
+.rangeOutput,
+.colorContainer,
+.slider h4 {
+	font-family: Bitter;
 }
 
 footer {
-
 }
 
 .container {
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
+	width: 500px;
+	height: 500px;
+	display: grid;
 }
 
 .sidebar {
-    width: 200px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	width: 200px;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	border-right: 5px solid;
+	border-color: rgb(197, 197, 197);
 }
 
 button {
-    text-decoration: none;
-    width: 5rem;
-    height: 2rem;
-    border-radius: 1rem;
+	font-family: Raleway;
+	font-weight: 900;
+	background-color: #ffffff;
+	width: 7rem;
+	border: solid;
+	border-color: rgb(212, 212, 212);
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1rem;
+	margin: 4px 2px;
+	border-radius: 12px;
+	transition: transform 0.2s;
+}
+
+button:hover {
+	transform: scale(1.2);
+	background-color: #65b7ff;
 }
 
 .square {
-    border-color: bisque;
-    border-width: 0;
-    padding: 0;
-    margin: 0;
-    background-color: bisque;
+	border-width: 1px;
+	border-radius: 20%;
+	border: 2px solid;
+	border-color: rgb(197, 197, 197);
+	padding: 0;
+	margin: 0;
+	background-color: rgb(255, 255, 255);
+	transition: transform 0.2s;
+}
+
+.square:hover {
+	transform: scale(1.04);
+}
+
+.slider {
+	border-color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.rangeOutput {
+	height: 1rem;
+	width: 100%;
+	text-align: center;
+}
+
+#colorPicker {
+	height: 80px;
+	width: 80px;
+	border-radius: 10%;
+}
+
+.colorContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.slider h4 {
+	padding: 0px;
+	margin: 0px;
 }

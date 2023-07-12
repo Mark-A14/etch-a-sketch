@@ -5,19 +5,34 @@ let sliderOutput = document.querySelector('.rangeOutput');
 sliderOutput.innerText = slider.value;
 slider.oninput = function () {
     sliderOutput.innerText = this.value.toString() + 'x' + this.value.toString();
+    
 }
 
 function spawnBoxes(){
     if(container.hasChildNodes()){
         return;
     }
-    let squareSize = 500/slider.value - 6;
+    container.style.gridTemplateColumns = `repeat(${slider.value}, 1fr)`;
+    container.style.gridTemplateRows = `repeat(${slider.value}, 1fr)`;
     for(let i = 0; i < slider.value**2; i++){
         let squareDiv = document.createElement('div');
         container.append(squareDiv);
-        squareDiv.style.width = squareSize.toString() + 'px';
-        squareDiv.style.height = squareSize.toString() + 'px';
+        squareDiv.classList.add('square');
+        squareDiv.addEventListener('mouseenter', applyColor);
     }
 }
 
 btnSpawn.addEventListener('click', spawnBoxes);
+container.addEventListener('mousemove', mouseEvent);
+
+function applyColor(event){
+
+}
+
+function clearGrid(event){
+    
+}
+
+function changeMode(event){
+    
+}
