@@ -1,28 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Etch A Sketch</title>
-</head>
-<body>
-    <header>
-        <h1>Etch A Sketch</h1>
-    </header>
-    <main>
-        <div class="sidebar">
-            <div class="slider">
-                <div class="rangeOutput"></div>
-                <input type="range" min="4" value="16" max="100" id="boxes">
-            </div>
-            <button class="spawn" type="button">Draw</button>
-        </div>
-        <div class="container"></div>
-    </main>
-    <footer>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Etch A Sketch</title>
+	</head>
+	<body>
+		<header>
+			<h1>Etch A Sketch</h1>
+		</header>
+		<main>
+			<div class="sidebar">
+				<div class="colorContainer">
+					<input type="color" name="gridColor" id="colorPicker" />
+					<h3>Pick A Color</h3>
+				</div>
 
-    </footer>
-    <script src="script.js"></script>
-</body>
+				<div class="slider">
+					<div class="rangeOutput"></div>
+					<input
+						type="range"
+						min="4"
+						value="16"
+						max="100"
+						id="boxes"
+					/>
+					<h4>Grid Size</h4>
+				</div>
+				<button id="progressive" type="button">Progressive</button>
+				<button id="rainbow" type="button">Rainbow</button>
+				<button id="clear" type="button">Clear</button>
+			</div>
+			<div class="container"></div>
+		</main>
+		<footer></footer>
+		<script src="script.js"></script>
+	</body>
 </html>
