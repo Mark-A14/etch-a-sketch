@@ -2,12 +2,14 @@ const DEFAULT_MODE = "color";
 const DEFAULT_SIZE = 16;
 let mode = DEFAULT_MODE;
 let container = document.querySelector(".container");
+let buttonClassic = document.querySelector("#classic");
 let buttonRainbow = document.querySelector("#rainbow");
 let buttonClear = document.querySelector("#clear");
 let buttonProgressive = document.querySelector("#progressive");
 let colorPicked = document.querySelector("#colorPicker");
 let slider = document.querySelector("#boxes");
 let sliderOutput = document.querySelector(".rangeOutput");
+let buttons = document.querySelectorAll("button");
 
 sliderOutput.innerText =
 	slider.value.toString() + "x" + slider.value.toString();
@@ -20,7 +22,13 @@ slider.oninput = function () {
 
 function changeMode(event) {
 	mode = this.value;
-	console.log(mode);
+	buttons.forEach((btn) => {
+		if (btn.value != mode) {
+			btn.style.backgroundColor = "white";
+		} else {
+			this.style.backgroundColor = `#65b7ff`;
+		}
+	});
 }
 
 function createGrids(size) {
@@ -45,8 +53,8 @@ function applyColor() {
 		this.style.backgroundColor = `rgb(${randomRed},${randomGreen},${randomBlue})`;
 	}
 	if (mode === "prog") {
-		if (this.style.backgroundColor == "") {
-			this.style.backgroundColor = colorPicked.value;
+		this.style.backgroundColor = colorPicked.value;
+		if (this.style.opacity == "") {
 			this.style.opacity = "0.1";
 		}
 
@@ -59,10 +67,6 @@ function applyColor() {
 }
 
 function clearGrid() {
-	// let grids = document.querySelectorAll(".square");
-	// grids.forEach((grid) => {
-	// 	grid.style.backgroundColor = "white";
-	// });
 	removeGrid();
 	createGrids(slider.value);
 }
@@ -71,10 +75,10 @@ function removeGrid() {
 	container.innerHTML = "";
 }
 
+buttonClassic.addEventListener("click", changeMode);
 buttonRainbow.addEventListener("click", changeMode);
 buttonClear.addEventListener("click", clearGrid);
 buttonProgressive.addEventListener("click", changeMode);
-colorPicked.addEventListener("click", function () {
-	mode = DEFAULT_MODE;
-});
+
 createGrids(DEFAULT_SIZE);
+buttonClassic.style.backgroundColor = `#65b7ff`;
